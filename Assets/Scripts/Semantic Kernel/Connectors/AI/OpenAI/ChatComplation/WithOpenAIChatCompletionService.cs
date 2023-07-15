@@ -4,15 +4,12 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
 {
     [UnitCategory("Semantic Kernel/Connectors/AI/OpenAI")]
     [UnitTitle("OpenAI Chat Completion")]
-    [UnitSubtitle("Add OpenAI chat completion service")]
+    [UnitSubtitle("Add OpenAI chat completion service to builder")]
     [UnitSurtitle("Semantic Kernel")]
-    public sealed class AddOpenAIChatCompletionService : Unit
+    public sealed class WithOpenAIChatCompletionService : Unit
     {
         [DoNotSerialize]
-        public ValueInput kernel;
-
-        [DoNotSerialize]
-        public ValueInput serviceId;
+        public ValueInput kernelBuilder;
 
         [DoNotSerialize]
         public ValueInput modelId;
@@ -22,6 +19,15 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
 
         [DoNotSerialize]
         public ValueInput orgId;
+
+        [DoNotSerialize]
+        public ValueInput serviceId;
+
+        [DoNotSerialize]
+        public ValueInput alsoAsTextCompletion;
+
+        [DoNotSerialize]
+        public ValueInput setAsDefault;
 
         [DoNotSerialize]
         [PortLabelHidden]
@@ -37,35 +43,39 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
 
         protected override void Definition()
         {
-            kernel = ValueInput<IKernel>("kernel");
-            serviceId = ValueInput<string>("serviceId", string.Empty);
+            kernelBuilder = ValueInput<KernelBuilder>("kernelBuilder");
             modelId = ValueInput<string>("modelId", string.Empty);
             apiKey = ValueInput<string>("apiKey");
             orgId = ValueInput<string>("orgId", string.Empty);
+            serviceId = ValueInput<string>("serviceId", string.Empty);
+            alsoAsTextCompletion = ValueInput<bool>("alsoAsTextCompletion", true);
+            setAsDefault = ValueInput<bool>("setAsDefault", false);
 
             enter = ControlInput("enter", (flow) => { return exit; });
             exit = ControlOutput("exit");
 
-            output = ValueOutput<IKernel>("output", (flow) =>
+            output = ValueOutput<KernelBuilder>("output", (flow) =>
             {
-                var kernelValue = flow.GetValue<IKernel>(kernel);
-                var serviceIdValue = flow.GetValue<string>(serviceId);
+                var kernelBuilderValue = flow.GetValue<KernelBuilder>(kernelBuilder);
                 var modelIdValue = flow.GetValue<string>(modelId);
                 var apiKeyValue = flow.GetValue<string>(apiKey);
                 var orgIdValue = flow.GetValue<string>(orgId);
+                var serviceIdValue = flow.GetValue<string>(serviceId);
+                var alsoAsTextCompletionValue = flow.GetValue<bool>(alsoAsTextCompletion);
+                var setAsDefaultValue = flow.GetValue<bool>(setAsDefault);
 
-                kernelValue.Config.AddOpenAIChatCompletionService(
+                kernelBuilderValue.WithOpenAIChatCompletionService(
                     modelIdValue,
                     apiKeyValue,
                     orgIdValue,
-                    alsoAsTextCompletion: true,
-                    serviceIdValue
+                    serviceIdValue,
+                    alsoAsTextCompletionValue,
+                    setAsDefaultValue
                 );
-                return kernelValue;
+                return kernelBuilderValue;
             });
 
-            Requirement(kernel, enter);
-            Requirement(serviceId, enter);
+            Requirement(kernelBuilder, enter);
             Requirement(modelId, enter);
             Requirement(apiKey, enter);
             Succession(enter, exit);

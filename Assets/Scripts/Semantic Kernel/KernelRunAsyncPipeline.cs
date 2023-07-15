@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Unity.VisualScripting;
 using Microsoft.SemanticKernel.Orchestration;
+using Microsoft.SemanticKernel.SkillDefinition;
 
 namespace Microsoft.SemanticKernel.Unity.VisualScripting
 {

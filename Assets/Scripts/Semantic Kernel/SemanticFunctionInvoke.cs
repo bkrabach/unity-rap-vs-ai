@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using Unity.VisualScripting;
 using Microsoft.SemanticKernel.Orchestration;
+using Microsoft.SemanticKernel.SkillDefinition;
 
 namespace Microsoft.SemanticKernel.Unity.VisualScripting
 {
@@ -67,14 +68,15 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
 
             var task = Task.Run(async () =>
             {
-                if (inputValue == null)
-                {
-                    invokeResult = await functionValue.InvokeAsync(contextValue, settingsValue);
-                }
-                else
-                {
-                    invokeResult = await functionValue.InvokeAsync(inputValue, contextValue, settingsValue);
-                }
+                invokeResult = await functionValue.InvokeAsync(contextValue, settingsValue);
+                //if (inputValue == null)
+                //{
+                //    invokeResult = await functionValue.InvokeAsync(contextValue, settingsValue);
+                //}
+                //else
+                //{
+                //    invokeResult = await functionValue.InvokeAsync(inputValue, contextValue, settingsValue);
+                //}
             });
 
             yield return new WaitUntil(() => task.IsCompleted);
