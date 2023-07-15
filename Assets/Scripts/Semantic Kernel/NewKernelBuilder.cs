@@ -26,8 +26,8 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
 
             output = ValueOutput<KernelBuilder>("output", (flow) =>
             {
-                var kernel = new KernelBuilder();
-                return kernel;
+                var kernelBuilder = new KernelBuilder();
+                return kernelBuilder;
             });
 
             Succession(enter, exit);

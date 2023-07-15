@@ -9,8 +9,8 @@ using Microsoft.SemanticKernel.Connectors.AI.OpenAI.ChatCompletion;
 namespace Microsoft.SemanticKernel.Unity.VisualScripting
 {
     [UnitCategory("Semantic Kernel/AI/ChatCompletion")]
-    [UnitTitle("Add User Message")]
-    [UnitSubtitle("Add user message")]
+    [UnitTitle("Generate Message")]
+    [UnitSubtitle("Generate AI message")]
     [UnitSurtitle("Semantic Kernel")]
     public sealed class GenerateMessageAsync : WaitUnit
     {
@@ -28,6 +28,8 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
 
         protected override void Definition()
         {
+            base.Definition();
+
             chatCompletion = ValueInput<IChatCompletion>("chatCompletion");
             chat = ValueInput<OpenAIChatHistory>("chat");
             

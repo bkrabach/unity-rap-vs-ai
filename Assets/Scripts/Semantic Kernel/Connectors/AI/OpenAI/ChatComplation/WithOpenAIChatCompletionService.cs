@@ -3,7 +3,7 @@ using Unity.VisualScripting;
 namespace Microsoft.SemanticKernel.Unity.VisualScripting
 {
     [UnitCategory("Semantic Kernel/Connectors/AI/OpenAI")]
-    [UnitTitle("OpenAI Chat Completion")]
+    [UnitTitle("With OpenAI Chat Completion Service")]
     [UnitSubtitle("Add OpenAI chat completion service to builder")]
     [UnitSurtitle("Semantic Kernel")]
     public sealed class WithOpenAIChatCompletionService : Unit
