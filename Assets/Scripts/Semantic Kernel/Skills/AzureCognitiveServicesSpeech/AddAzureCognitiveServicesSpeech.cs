@@ -46,7 +46,7 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
             enter = ControlInput("enter", (flow) => { return exit; });
             exit = ControlOutput("exit");
 
-            output = ValueOutput<IKernel>("output", (flow) =>
+            output = ValueOutput("output", (flow) =>
             {
                 var kernelValue = flow.GetValue<IKernel>(kernel);
                 var subscriptionKeyValue = flow.GetValue<string>(subscriptionKey);
@@ -56,8 +56,8 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
 
                 var speechSkill = new AzureCognitiveServicesSpeechSkill(subscriptionKeyValue, serviceRegionValue, voiceNameValue, speechRateValue);
 
-                kernelValue.ImportSkill(speechSkill, "speech");
-                return kernelValue;
+                var speechFunction = kernelValue.ImportSkill(speechSkill, "speech");
+                return speechFunction;
             });
 
             Requirement(kernel, enter);

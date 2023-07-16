@@ -5,6 +5,7 @@ using Microsoft.SemanticKernel.Orchestration;
 using Microsoft.SemanticKernel.SkillDefinition;
 using Microsoft.SemanticKernel.Text;
 using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using static UnityEditor.Progress;
 
@@ -42,6 +43,8 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
             speechSynthesizer = new SpeechSynthesizer(speechConfig);
         }
 
+        [SKName("Listen")]
+        [SKFunction, Description("Listens for speech and returns the recognized text.")]
         public async Task<string> ListenAsync(SKContext context)
         {
             while(!context.CancellationToken.IsCancellationRequested)
@@ -61,6 +64,8 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
             return string.Empty;
         }
 
+        [SKName("Speak")]
+        [SKFunction, Description("Speaks the given text.")]
         public async Task SpeakAsync(string message, SKContext context)
         {
             if (!string.IsNullOrWhiteSpace(message))
@@ -71,6 +76,7 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
                     voiceName,
                     speechRate
                 );
+
                 await speechSynthesizer.SpeakSsmlAsync(ssml);
             }
         }

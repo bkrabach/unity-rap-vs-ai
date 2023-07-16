@@ -73,7 +73,8 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
 
             var task = Task.Run(async () =>
             {
-                if (inputValue != null) {
+                if (inputValue != null)
+                {
                     runResult = await kernelValue.RunAsync(inputValue, pipeline);
                 }
                 else if (variablesValue != null)
