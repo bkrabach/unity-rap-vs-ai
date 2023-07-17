@@ -3,11 +3,9 @@ using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using Microsoft.SemanticKernel.Orchestration;
 using Microsoft.SemanticKernel.SkillDefinition;
-using Microsoft.SemanticKernel.Text;
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using static UnityEditor.Progress;
 
 namespace Microsoft.SemanticKernel.Unity.VisualScripting
 {
