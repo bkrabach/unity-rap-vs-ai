@@ -1,3 +1,4 @@
+#nullable enable
 using System;
 using System.Collections;
 using System.Threading.Tasks;
@@ -15,16 +16,23 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
     public sealed class GenerateMessageAsync : WaitUnit
     {
         [DoNotSerialize]
-        public ValueInput chatCompletion;
+        public ValueInput? chatCompletion;
 
         [DoNotSerialize]
-        public ValueInput chat;
+        public ValueInput? chat;
 
         [DoNotSerialize]
         [PortLabelHidden]
-        public ValueOutput output;
+        public ValueOutput? output;
 
-        private string runResult;
+        [DoNotSerialize]
+        public ControlOutput? error;
+
+        [DoNotSerialize]
+        public ValueOutput? errorMessage;
+
+        private string? errorMessageValue;
+        private string? runResult;
 
         protected override void Definition()
         {
@@ -32,19 +40,16 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
 
             chatCompletion = ValueInput<IChatCompletion>("chatCompletion");
             chat = ValueInput<OpenAIChatHistory>("chat");
-            
-            output = ValueOutput<string>("output", (flow) =>
-            {
-                if (runResult == null)
-                {
-                    throw new Exception("no result available");
-                }
-                return runResult;
-            });
+
+            output = ValueOutput<string>("output", (flow) => runResult ?? "");
+            errorMessage = ValueOutput<string?>("errorMessage", (flow) => errorMessageValue);
+
+            error = ControlOutput("error");
 
             Requirement(chatCompletion, enter);
             Requirement(chat, enter);
             Succession(enter, exit);
+            Succession(enter, error);
             Assignment(enter, output);
         }
 
@@ -57,7 +62,14 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
 
             var task = Task.Run(async () =>
             {
-                runResult = await chatCompletionValue.GenerateMessageAsync(chatValue);
+                try
+                {
+                    runResult = await chatCompletionValue.GenerateMessageAsync(chatValue);
+                }
+                catch (Exception ex)
+                {
+                    errorMessageValue = ex.Message;
+                }
             });
 
             yield return new WaitUntil(() => task.IsCompleted);
