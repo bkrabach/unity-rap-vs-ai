@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using UnityEngine;
-using Unity.VisualScripting;
+using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.Orchestration;
 using Microsoft.SemanticKernel.SkillDefinition;
+using UnityEngine;
+using Unity.VisualScripting;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.SemanticFunctions
 {
     [UnitCategory("Semantic Kernel")]
     [UnitTitle("Kernel Run Async (kernel, input, function")]

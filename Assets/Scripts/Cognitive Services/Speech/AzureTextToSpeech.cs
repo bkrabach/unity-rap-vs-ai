@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.VisualScripting;
 
-namespace Microsoft.Prototyping.AzureSpeech
+namespace Scripts.CognitiveServices.Speech
 {
     [UnitCategory("Azure Speech")]
     [UnitTitle("Azure Text To Speech")]
+    [UnitSurtitle("Azure Speech")]
     public sealed class AzureTextToSpeech : WaitUnit
     {
         [DoNotSerialize]

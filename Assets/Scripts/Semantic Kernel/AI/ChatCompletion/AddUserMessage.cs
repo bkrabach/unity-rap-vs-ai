@@ -1,11 +1,10 @@
 using Microsoft.SemanticKernel.Connectors.AI.OpenAI.ChatCompletion;
 using Unity.VisualScripting;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.AI.ChatCompletion
 {
-    [UnitCategory("Semantic Kernel/AI/ChatCompletion")]
+    [UnitCategory("Semantic Kernel/AI/Chat Completion")]
     [UnitTitle("Add User Message")]
-    [UnitSubtitle("Add user message")]
     [UnitSurtitle("Semantic Kernel")]
     public sealed class AddUserMessage : Unit
     {

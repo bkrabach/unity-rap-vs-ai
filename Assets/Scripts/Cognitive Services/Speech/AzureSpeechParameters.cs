@@ -1,6 +1,6 @@
 ﻿#nullable enable
 
-namespace Microsoft.Prototyping.AzureSpeech
+namespace Scripts.CognitiveServices.Speech
 {
     public class AzureSpeechParameters
     {

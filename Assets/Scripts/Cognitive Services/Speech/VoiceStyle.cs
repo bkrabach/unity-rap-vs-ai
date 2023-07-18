@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Prototyping.AzureSpeech
+﻿namespace Scripts.CognitiveServices.Speech
 {
     public enum VoiceStyle_en_US_Neural
     {

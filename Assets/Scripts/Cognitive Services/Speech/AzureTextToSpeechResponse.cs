@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Microsoft.CognitiveServices.Speech;
 
-namespace Microsoft.Prototyping.AzureSpeech
+namespace Scripts.CognitiveServices.Speech
 {
     public class AzureTextToSpeechResponse
     {

@@ -1,12 +1,13 @@
 #nullable enable
+using System.Collections;
 using Microsoft.CognitiveServices.Speech;
 using Unity.VisualScripting;
-using System.Collections;
 
-namespace Microsoft.Prototyping.AzureSpeech
+namespace Scripts.CognitiveServices.Speech
 {
     [UnitCategory("Azure Speech")]
     [UnitTitle("Azure Speech To Text")]
+    [UnitSurtitle("Azure Speech")]
     public sealed class AzureSpeechToText : WaitUnit
     {
         [DoNotSerialize]

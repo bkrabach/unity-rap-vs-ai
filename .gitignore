@@ -5,13 +5,6 @@ Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
 Assets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
 Assets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
 
-# Don't check in the "Assets/Resources/Secrets" folder
-/[Aa]ssets/[Rr]esources/[Ss]ecrets
-
-# Or the config for Azure Speech
-Microsoft Prototyping Azure Speech Config.asset
-Microsoft Prototyping Azure Speech Config.asset.meta
-
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore

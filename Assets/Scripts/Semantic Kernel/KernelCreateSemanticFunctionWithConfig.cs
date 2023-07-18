@@ -1,8 +1,9 @@
-﻿using Unity.VisualScripting;
+﻿using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.SkillDefinition;
 using Microsoft.SemanticKernel.SemanticFunctions;
+using Unity.VisualScripting;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.SemanticFunctions
 {
     [UnitCategory("Semantic Kernel")]
     [UnitTitle("Create Semantic Function (kernel, promptTemplate, config)")]

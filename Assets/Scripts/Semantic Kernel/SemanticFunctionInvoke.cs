@@ -3,10 +3,11 @@ using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 using Unity.VisualScripting;
+using Microsoft.SemanticKernel.AI.TextCompletion;
 using Microsoft.SemanticKernel.Orchestration;
 using Microsoft.SemanticKernel.SkillDefinition;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.SemanticFunctions
 {
     [UnitCategory("Semantic Kernel")]
     [UnitTitle("Invoke Semantic Function")]
@@ -42,7 +43,7 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
             function = ValueInput<ISKFunction>("function");
             input = ValueInput<string>("input", null);
             context = ValueInput<SKContext>("context", null);
-            settings = ValueInput<AI.TextCompletion.CompleteRequestSettings>("settings", null);
+            settings = ValueInput<CompleteRequestSettings>("settings", null);
 
             output = ValueOutput<SKContext>("output", (flow) =>
             {
@@ -64,7 +65,7 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
             var functionValue = flow.GetValue<ISKFunction>(function);
             var inputValue = input.hasValidConnection ? flow.GetValue<string>(input) : null;
             var contextValue = context.hasValidConnection ? flow.GetValue<SKContext>(context) : null;
-            var settingsValue = settings.hasValidConnection ? flow.GetValue<AI.TextCompletion.CompleteRequestSettings>(settings) : null;
+            var settingsValue = settings.hasValidConnection ? flow.GetValue<CompleteRequestSettings>(settings) : null;
 
             var task = Task.Run(async () =>
             {

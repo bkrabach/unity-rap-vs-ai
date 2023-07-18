@@ -7,7 +7,7 @@ using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.Skills.AzureCognitiveServicesSpeech
 {
     public sealed class AzureCognitiveServicesSpeechSkill
     {

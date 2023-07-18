@@ -2,11 +2,10 @@ using Microsoft.SemanticKernel.AI.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.AI.OpenAI.ChatCompletion;
 using Unity.VisualScripting;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.AI.ChatCompletion
 {
-    [UnitCategory("Semantic Kernel/AI")]
+    [UnitCategory("Semantic Kernel/AI/Chat Completion")]
     [UnitTitle("Create New Chat")]
-    [UnitSubtitle("Create new chat")]
     [UnitSurtitle("Semantic Kernel")]
     public sealed class CreateNewChat : Unit
     {

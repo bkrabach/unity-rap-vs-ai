@@ -5,7 +5,7 @@ using Microsoft.CognitiveServices.Speech;
 using Microsoft.CognitiveServices.Speech.Audio;
 using UnityEngine;
 
-namespace Microsoft.Prototyping.AzureSpeech
+namespace Scripts.CognitiveServices.Speech
 {
     internal class AzureSpeechToTextAPI
     {

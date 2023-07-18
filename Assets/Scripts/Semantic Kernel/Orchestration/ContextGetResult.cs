@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using Microsoft.SemanticKernel.Orchestration;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.Orchestration
 {
     [UnitCategory("Semantic Kernel/Orchestration")]
     [UnitTitle("Get Context Result")]

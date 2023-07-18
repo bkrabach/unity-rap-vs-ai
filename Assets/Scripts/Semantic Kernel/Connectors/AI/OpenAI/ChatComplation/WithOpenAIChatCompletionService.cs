@@ -1,6 +1,7 @@
+using Microsoft.SemanticKernel;
 using Unity.VisualScripting;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.Connectors.AI.OpenAI.ChatCompletion
 {
     [UnitCategory("Semantic Kernel/Connectors/AI/OpenAI")]
     [UnitTitle("With OpenAI Chat Completion Service")]

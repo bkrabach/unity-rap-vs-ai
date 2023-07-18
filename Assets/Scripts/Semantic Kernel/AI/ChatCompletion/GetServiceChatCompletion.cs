@@ -1,9 +1,10 @@
+using Microsoft.SemanticKernel;
 using Microsoft.SemanticKernel.AI.ChatCompletion;
 using Unity.VisualScripting;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.AI.ChatCompletion
 {
-    [UnitCategory("Semantic Kernel/AI")]
+    [UnitCategory("Semantic Kernel/AI/Chat Completion")]
     [UnitTitle("Chat Completion")]
     [UnitSubtitle("Get chat completion service")]
     [UnitSurtitle("Semantic Kernel")]

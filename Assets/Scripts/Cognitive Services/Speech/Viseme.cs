@@ -1,4 +1,5 @@
-﻿namespace Microsoft.Prototyping.AzureSpeech
+﻿namespace Scripts.CognitiveServices.Speech
+
 {
     public struct Viseme
     {

@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using System.Text;
+﻿using System.Text;
 using System.IO;
 using System;
+using UnityEngine;
 
 /// <summary>
 /// WAV utility for recording and audio playback functions in Unity.

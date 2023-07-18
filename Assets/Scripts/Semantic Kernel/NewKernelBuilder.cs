@@ -1,6 +1,7 @@
+using Microsoft.SemanticKernel;
 using Unity.VisualScripting;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.SemanticFunctions
 {
     [UnitCategory("Semantic Kernel")]
     [UnitTitle("New Kernel Builder")]

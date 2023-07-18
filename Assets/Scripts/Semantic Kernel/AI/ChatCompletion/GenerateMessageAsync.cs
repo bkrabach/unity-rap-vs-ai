@@ -7,11 +7,10 @@ using Unity.VisualScripting;
 using Microsoft.SemanticKernel.AI.ChatCompletion;
 using Microsoft.SemanticKernel.Connectors.AI.OpenAI.ChatCompletion;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.AI.ChatCompletion
 {
-    [UnitCategory("Semantic Kernel/AI/ChatCompletion")]
+    [UnitCategory("Semantic Kernel/AI/Chat Completion")]
     [UnitTitle("Generate Message")]
-    [UnitSubtitle("Generate AI message")]
     [UnitSurtitle("Semantic Kernel")]
     public sealed class GenerateMessageAsync : WaitUnit
     {
@@ -22,7 +21,6 @@ namespace Microsoft.SemanticKernel.Unity.VisualScripting
         public ValueInput? chat;
 
         [DoNotSerialize]
-        [PortLabelHidden]
         public ValueOutput? output;
 
         [DoNotSerialize]

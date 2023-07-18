@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.CognitiveServices.Speech;
 using UnityEngine;
 
-namespace Microsoft.Prototyping.AzureSpeech
+namespace Scripts.CognitiveServices.Speech
 {
     internal class AzureTextToSpeechAPI
     {

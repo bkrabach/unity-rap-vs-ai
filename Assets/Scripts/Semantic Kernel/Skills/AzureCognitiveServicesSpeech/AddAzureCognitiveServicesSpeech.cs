@@ -1,10 +1,10 @@
+using Microsoft.SemanticKernel;
 using Unity.VisualScripting;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.Skills.AzureCognitiveServicesSpeech
 {
-    [UnitCategory("Semantic Kernel/Skills/AzureCognitiveServicesSpeech")]
+    [UnitCategory("Semantic Kernel/Skills/Azure Cognitive Services Speech")]
     [UnitTitle("Add Azure Cognitive Services Speech skill")]
-    [UnitSubtitle("Add Azure Cognitive Services Speech skill to kernel")]
     [UnitSurtitle("Semantic Kernel")]
     public sealed class AddAzureCognitiveServicesSpeech : Unit
     {

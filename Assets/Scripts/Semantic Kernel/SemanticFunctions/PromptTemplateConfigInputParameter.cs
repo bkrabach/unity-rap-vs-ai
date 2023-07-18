@@ -1,7 +1,7 @@
 ﻿using Unity.VisualScripting;
 using Microsoft.SemanticKernel.SemanticFunctions;
 
-namespace Microsoft.SemanticKernel.Unity.VisualScripting
+namespace Scripts.SemanticKernel.SemanticFunctions
 {
     [UnitCategory("Semantic Kernel/Semantic Functions")]
     [UnitTitle("Input Parameter")]
